@@ -68,13 +68,12 @@ MAIN SHI DONE
 FOOTER SHI
 <>*/
 #devPhoneShell{
-    top: 17%;
+    top: 93%;
     right: 10vw;
     position: fixed;
     display: flex;
     width: 30vw;
     height: 75vh;
-    background:white;
 }
 #devPhoneFrame{
     display:flex;
@@ -100,22 +99,55 @@ FOOTER SHI
     z-index:9999;
     flex:1;
     background:grey;
+    display:block;
 }
+#devPhone img{
+    width:5vw;
+    height:5vh;
+    border-radius:50%;
+}
+
+#devPhoneTopbar{
+    margin-top: -16px;
+    background-color: dimgrey;
+    text-align: center;
+    width: 100%;
+}
+
+.phoneApp{
+    width:5vw;
+    height:5vh;
+    margin:10px;
+}
+
 
 .phoneUpRun{
-    animation: phoneUp 5s ease;
+    animation: phoneUp 1s ease;
 }
-
+.phoneDownRun{
+    animation: phoneDown 1s ease;
+}
+.phoneUp{
+    transform:translateY(-102%);
+}
+.phoneDown{
+    transform:translateY(0%);
+}
 @keyframes phoneUp{
     0% {
-        transform:translateY(1%);
+        transform:translateY(-1%);
     }
     
-    50% {
-        transform:translateY(50%);
-    }
-
     100% {
-        transform:translateY(30%);
+        transform:translateY(-102%);
+    }
+}
+@keyframes phoneDown{
+    0% {
+        transform:translateY(-102%);
+    }
+    
+    100% {
+        transform:translateY(0%);
     }
 }
