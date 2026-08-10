@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf=8">
+        <meta name="viewport" content="width=device-width,initial.scale=1.0">
+        <title>loginYard/projectZero.de</title>
+        <style>
+            body{
+                margin:0;
+                display:flex;
+                justify-content:center;
+            }
+            div{
+                top:50%;
+                transform:translateY(-50%);
+                position:fixed;
+                display:flex;
+                flex-direction:column;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h3>LOGIN / REGISTER</h3>
+            <input id="usernameInput" type="text" placeholder="Username" autofucus>
+            <input id="passwordInput" type="password" placeholder="Password" autofucus><br>
+            <button onclick="submitUserData('login')">LOGIN</button>
+            <button onclick="submitUserData('register')">REGISTER</button>
+        </div>
+        <script src="js/data.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>
