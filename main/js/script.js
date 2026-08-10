@@ -6,6 +6,7 @@
 // DEV PHONE
 //
 
+let devMode = null;
 let phoneActive = false;
 let phoneShell = document.getElementById("devPhoneShell");
 let phoneFrame = document.getElementById("devPhoneFrame");
@@ -14,8 +15,34 @@ console.log(phoneActive , phoneShell , phoneFrame , phone);
 //
 // ONCLICK
 //
-document.getElementById("devPhoneFrame").addEventListener("click" , function(){
-    console.log("clicked")
-    phoneShell.classList.add("phoneUpRun");
+listen();
+function listen(){
+phoneFrame.addEventListener("click" , function(){
+    if(!phoneActive){
+        phoneOn();
+    }else{
+        phoneOff();
+    }
+});
+phone.addEventListener("click", function(event){
+    event.stopPropagation();
 })
 console.log("added event")
+}
+function phoneOn(){
+    phoneActive = true;
+    phoneShell.classList.remove("phoneDown");
+    phoneShell.classList.remove("phoneDownRun");
+    phoneShell.classList.add("phoneUpRun");
+    phoneShell.classList.add("phoneUp");
+}
+function phoneOff(){
+    phoneActive = false;
+    phoneShell.classList.remove("phoneUp");
+    phoneShell.classList.remove("phoneUpRun");
+    phoneShell.classList.add("phoneDownRun");
+    phoneShell.classList.add("phoneDown");
+}
+// DEV PHONE END
+//
+//______________
