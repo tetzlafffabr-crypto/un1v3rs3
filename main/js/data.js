@@ -18,7 +18,23 @@ if(!groundZeroData){
         },
         {
             path: "storage",
-            data: []
+            data: [
+                {
+                    path: "trainyard",
+                    data: [
+                        {
+                            path: "customLvl",
+                            data:[
+                                {
+                                    question: "exampleQuest",
+                                    answer: "exampleAnswer",
+                                    xp: 1
+                                },
+                            ]
+                        }
+                    ]
+                },
+            ]
         },
     ]
     console.log(`ID1=root> uploading_file`);
