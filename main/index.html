@@ -29,18 +29,40 @@
                 <div id="devPhoneFrame">
                     <h3>DEV-PHONE</h3>
                     <div id="devPhone">
-
+                        <div id="devPhoneTopbar">
+                            <p><span id="clock">CLOCK</span></p>
+                        </div>
+                        <div id="trainyardEditor" class="phoneApp">
+                            <img src="C:\Users\extra\Desktop\Programming\Images\drive-download-20260712T180211Z-2-001\13.jpg">
+                            <button>Trainyard Editor</button>
+                        </div>
+                        <div id="trainyardEditor" class="phoneApp">
+                            <img src="C:\Users\extra\Desktop\Programming\Images\drive-download-20260712T180211Z-2-001\14.jpg">
+                            <button>Test1</button>
+                        </div>
+                        <div id="trainyardEditor" class="phoneApp">
+                            <img src="C:\Users\extra\Desktop\Programming\Images\drive-download-20260712T180211Z-2-001\15.jpg">
+                            <button>Test2</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </footer>
-        <script src="js/script.js>"></script>
+        <script src="js/script.js"></script>
         <script src="js/data.js"></script>
         <script>
             if(sessionStorage.getItem("activeUser") === null){
                 window.location.href = "loginYard.html";
             }
             const activeDude = JSON.parse(sessionStorage.getItem("activeUser"));
+            if(activeDude.username === "EatSumCrips"){
+                activeDude.username = "EatSumCrips [DEV]";
+                devMode = true;
+                phoneShell.style.display = "flex";
+            }else{
+                devMode = false;
+                phoneShell.style.display = "none";
+            }
             document.getElementById("dashUser").innerText = activeDude.username;
             document.getElementById("dashId").innerText = activeDude.userId;
             document.getElementById("dashCredits").innerText = activeDude.credits;
@@ -48,6 +70,18 @@
             document.getElementById("dashWrong").innerText = activeDude.falseScore;
             document.getElementById("dashScore").innerText = activeDude.highscore;
             document.getElementById("dashJoin").innerText = activeDude.joinDate;
+
+            setInterval(() => {
+                updateClock();
+            }, 100);
+
+            function updateClock(){
+                const now = new Date();
+                const hours = String(now.getHours()).padStart(2,"0");
+                const minutes = String(now.getMinutes()).padStart(2, "0");
+                const seconds = String(now.getSeconds()).padStart(2, "0");
+                document.getElementById("clock").textContent = `${hours}:${minutes}:${seconds}`;
+            }
         </script>
     </body>
 </html>
