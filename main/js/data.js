@@ -23,7 +23,7 @@ if(!groundZeroData){
                     path: "trainyard",
                     data: [
                         {
-                            path: "customLvl",
+                            path: "custom_level",
                             data:[
                                 {
                                     question: "exampleQuest",
@@ -33,6 +33,44 @@ if(!groundZeroData){
                             ]
                         }
                     ]
+                },
+                {
+                    path: "strings",
+                    data: [
+                        {
+                            path: "groundZ",
+                            data: [
+                                {
+                                    fehler: "Fehler sind Hinweise auf Verbesserungen.",
+                                    smartDocs: "Wie funktioniert es? & Wofür ist es gut?",
+                                    cssMean: "Cascading Style Sheets",
+                                    htmlMean: "HyperText Markup Language",
+                                },
+                            ]
+                        },
+                    ]
+                },
+                {
+                    path: "ideas",
+                    data: [
+                        {
+                            path: "coding",
+                            data: [
+                                {
+                                    iOne: "Eine Funktion um Fertige Apps ins Hand upzuloaden (schwer)",
+                                }
+                            ]
+                        },
+                    ]
+                },
+            ]
+        },
+        {
+            path: "phoneApps",
+            data: [
+                {
+                    path: "notes",
+                    data: []
                 },
             ]
         },
@@ -98,7 +136,7 @@ function submitUserData(type){
             {
                 username: inputA,
                 password: inputB,
-                userId: groundZeroData[0].data.length,
+                userId: crypto.randomUUID(),
                 credits: 0,
                 trueScore: 0,
                 falseScore: 0,
