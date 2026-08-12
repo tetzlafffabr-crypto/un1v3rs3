@@ -95,29 +95,37 @@ FOOTER SHI
         0 0 10px red,
         0 0 15px red;
 }
-#devPhone{
-    z-index:9999;
-    flex:1;
-    background:grey;
-    display:block;
+#devPhone {
+    z-index: 9999;
+    flex: 1;
+    flex-direction:row;
+    padding-top:20px;
+    background: grey;
+    max-width:28vw;
 }
 #devPhone img{
     width:5vw;
-    height:5vh;
+    height:10vh;
     border-radius:50%;
 }
 
 #devPhoneTopbar{
-    margin-top: -16px;
+    height: 3vh;
+    position: absolute;
+    top: 0px;
     background-color: dimgrey;
     text-align: center;
     width: 100%;
 }
-
+#devPhoneTopbar p{
+    position:relative;
+    top:-16px;
+}
 .phoneApp{
-    width:5vw;
-    height:5vh;
-    margin:10px;
+    width: 5vw;
+    height: 10vh;
+    box-sizing: border-box;
+    display: flex;
 }
 
 
@@ -150,4 +158,41 @@ FOOTER SHI
     100% {
         transform:translateY(0%);
     }
+}
+
+/*<>
+APPS
+<>*/
+#notesTopbar{
+        width: 100%;
+    position: relative;
+    height: 7%;
+    top: -1px;
+    background-color: #413c3c;
+}
+
+#addNoteBtn{
+    position: absolute;
+    right: 0px;
+    height: 100%;
+    width: 10%;
+    top: 0px;
+    background:none;
+    outline:none;
+    border:none;
+    font-size: 23px;
+}
+#addNoteBtn:hover{
+    position: absolute;
+    right: 0px;
+    height: 100%;
+    width: 10%;
+    top: 0px;
+    font-size: 23px;
+    background:rgb(70, 69, 69);
+    outline:none;
+    border:none;
+}
+#noteTitleIn::placeholder{
+    color:black;
 }
