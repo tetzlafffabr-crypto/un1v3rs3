@@ -8,7 +8,10 @@
     </head>
     <body>
         <header id="indexHeader">
-
+            <div id="headerContentShell" style="width:100%; height:100%;">
+                <h1><span id="headerTitle"></span></h1>
+                <div id="headerContent"></div>
+            </div>
         </header>
         <main id="indexMain">
             <div id="dashboardShell">
@@ -24,6 +27,23 @@
                     <p>DEV-SHI: <span id="devShi">BRUH</span></p>
                 </div>
             </div>
+            <div id="toolMenuShell">
+                <div id="toolMenu">
+                    <details class="toolMenuDetails">
+                    <summary >TRAINGROUND</summary>
+                        <button id="runCstmLvl">CUSTOM LEVELS</button>
+                    </details>
+                    <details class="toolMenuDetails">
+                    <summary>LESSONS</summary>
+                        <button id="runHtmlBtn">HTML</button>
+                    </details>
+                </div>
+            </div>
+            <div id="toolAreaShell">
+                <div id="toolAreaUi">
+                    <div id="toolFrame" style="width:100%; height:100%;"></div>
+                </div>
+            </div>
         </main>
         <footer id="indexFooter">
             <div id="devPhoneShell">
@@ -34,11 +54,11 @@
                             <p><span id="clock">CLOCK</span></p>
                         </div>
                         <div id="trainyardEditor" class="phoneApp">
-                            <img src="C:\Users\extra\Desktop\Programming\Images\drive-download-20260712T180211Z-2-001\25.gif">
+                            <img src="C:\Users\extra\Desktop\Programming\Images\drive-download-20260712T180211Z-2-001\5.jpg"><br>
                             <button onclick="yardEditor()">Trainyard Editor</button>
                         </div>
                         <div id="trainyardEditor" class="phoneApp">
-                            <img src="C:\Users\extra\Desktop\Programming\Images\drive-download-20260712T180211Z-2-001\24.gif">
+                            <img src="C:\Users\extra\Desktop\Programming\Images\drive-download-20260712T180211Z-2-001\24.gif"><br>
                             <button onclick="loadNotes()">NotesValpha</button>
                         </div>
                         <button onclick="homeButton()" style="
@@ -57,6 +77,7 @@
         </footer>
         <script src="js/devPhone.js"></script>
         <script src="js/data.js"></script>
+        <script src="js/script.js"></script>
         <script>
             if(sessionStorage.getItem("activeUser") === null){
                 window.location.href = "loginYard.html";
@@ -80,7 +101,7 @@
 
             setInterval(() => {
                 updateClock();
-            }, 1000);
+            }, 100);
 
             function updateClock(){
                 const now = new Date();
